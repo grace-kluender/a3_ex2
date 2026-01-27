@@ -6,22 +6,22 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    data = {
-        "available_endpoints": {
-            "/uppercase/<text>": "Returns an uppercase version of the <text> "
-            "from the URL path",
-            "/lowercase/<text>": "Returns a lowercase version of the <text> "
-            "from the URL path",
-            "/charcount/<text>": "Returns the character count from the <text> "
-            "from the URL path",
-        }
+    data = ({
+    "available_endpoints": {
+        "/uppercase/<text>": "Returns an uppercase version of the <text> "
+        "from the URL path",
+        "/lowercase/<text>": "Returns a lowercase version of the <text> "
+        "from the URL path",
+        "/charcount/<text>": "Returns the character count from the <text> "
+        "from the URL path",
     }
+})
     return Response(json.dumps(data, indent=2),
         mimetype="application/json")
 
 
 @app.route("/uppercase/<text>", methods=["GET"])
-def uppercase( text ):
+def uppercase(text):
     """
     Returns an uppercase version of the text from the URL path
     """
