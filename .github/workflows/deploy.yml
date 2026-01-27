@@ -25,19 +25,19 @@ jobs:
           pip install -r requirements.txt
 
       # Quality Gates
-      - name: Run Linting Tools
-        run: | # If flake8 finds issue, error & suggestion is printed
-          flake8 --exclude=.git,__pycache__,venv || {
-            echo "Linting Failed. Fix the reported file(s), then rerun CI."
-            exit 1
-          }
-
       - name: Run Code Formatting Tool
         run: | # If black finds issue, error & suggestion is printed
           black --check . || {
             echo "Formatting check failed. Run: black . then commit the changes."
             exit 1
             }
+
+      - name: Run Linting Tools
+        run: | # If flake8 finds issue, error & suggestion is printed
+          flake8 --exclude=.git,__pycache__,venv || {
+            echo "Linting Failed. Fix the reported file(s), then rerun CI."
+            exit 1
+          }
 
       - name: Test with pytest
         run: |
