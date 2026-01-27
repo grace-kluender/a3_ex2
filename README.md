@@ -19,5 +19,5 @@ This minimal Flask web API provides simple text utilities via URL path parameter
     ```bash
     docker build -t flask_app .
     docker run -p 5000:5000 flask_app
-3. Open url that appears in terminal
+3. Open the url that appears in terminal
 
