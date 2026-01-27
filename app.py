@@ -6,8 +6,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    data = (
-        {
+    data = {
         "available_endpoints": {
             "/uppercase/<text>": "Returns an uppercase version of the <text> "
             "from the URL path",
@@ -16,12 +15,12 @@ def home():
             "/charcount/<text>": "Returns the character count from the <text> "
             "from the URL path",
         }
-        }
-    )
+    }
     return Response(
         json.dumps(data, indent=2),
         mimetype="application/json",
     )
+
 
 @app.route("/uppercase/<text>", methods=["GET"])
 def uppercase(text):
