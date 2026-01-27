@@ -42,10 +42,10 @@ jobs:
       - name: Test with pytest
         run: |
           mkdir -p junit
-          pytest tests/test_app.py
+          pytest tests/test_app.py \
             --doctest-modules \
             --junitxml=junit/test-results.xml \
-            --cov=come
+            --cov=. \
             --cov-report=xml \
             --cov-report=html \
             --cov-fail-under=80
