@@ -36,7 +36,8 @@ jobs:
         run: | # If black finds issue, error & suggestion is printed
           black --check . || {
             echo "Formatting check failed. Run: black . then commit the changes."
-            exit 1}
+            exit 1
+            }
 
       - name: Test with pytest
         run: |
@@ -60,5 +61,5 @@ jobs:
               htmlcov/
 
       - name: Build Docker image
-              if: success()
-              run: docker build -t flask_app .
+          if: success()
+          run: docker build -t flask_app .
