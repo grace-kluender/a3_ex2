@@ -61,5 +61,5 @@ jobs:
             htmlcov/
 
       - name: Build Docker image
-          if: success()
-          run: docker build -t flask_app .
+        if: success()
+        run: docker build -t flask_app .
