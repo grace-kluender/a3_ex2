@@ -23,7 +23,7 @@ def home():
 
 
 @app.route("/uppercase/<text>", methods=["GET"])
-def uppercase(text):
+def uppercase( text ):
     """
     Returns an uppercase version of the text from the URL path
     """
