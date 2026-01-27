@@ -16,10 +16,8 @@ def home():
             "from the URL path",
         }
     }
-    return Response(
-        json.dumps(data, indent=2),
-        mimetype="application/json",
-    )
+    return Response(json.dumps(data, indent=2),
+        mimetype="application/json")
 
 
 @app.route("/uppercase/<text>", methods=["GET"])
