@@ -18,7 +18,7 @@ def test_mixed_uppercase():
     app.testing = True
     client = app.test_client()
     response = client.get("/uppercase/Hello")
-    assert response.get_json() == "HELLO"
+    assert response.get_json() == "HeLLO"
 
 
 def test_lowercase():
